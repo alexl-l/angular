@@ -1,0 +1,11 @@
+<div class="card" *ngIf="product !== undefined">
+  <svg class="card-img-top bi mt-4 mb-4" width="64" height="64" fill="currentColor">
+    <use [attr.xlink:href]="'bootstrap-icons.svg#' + product.icon"/>
+  </svg>
+  <div class="card-body">
+    <h5 class="card-title">{{product.name | upperCase}}</h5>
+    <p class="card-text">{{product.description}}</p>
+    <p class="card-text">{{product.price | currency }}</p>
+    <button class="btn btn-primary" (click)="emitCard(product)">Buy</button>
+  </div>
+</div>

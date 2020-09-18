@@ -1,0 +1,12 @@
+<ng-container *ngIf="products && products.length > 0; else errorInformation">
+  <div class="row">
+    <div class="mos-card col-sm-4" *ngFor="let product of products">
+      <mos-card class="m-4" (emitter)="buyProduct($event)" [product]="product"></mos-card>
+    </div>
+  </div>
+</ng-container>
+<ng-template #errorInformation>
+  <div class="alert alert-warning" role="alert">
+    {{message}}
+  </div>
+</ng-template>
